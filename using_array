@@ -29,7 +29,7 @@ function getEmpWage()
    do
         ((empWorkingDays++))
         randomCheck=$((RANDOM%3))
-        empHrs=$( working_hrs_Days $((RANDOM%3)) )
+        empHrs=$( working_hrs_Days $randomCheck )
         totalEmpHrs=$(($totalEmpHrs+$empHrs))
         dailyWage[$empWorkingHrs]=$(getEmpWage $empHrs)  
    done
