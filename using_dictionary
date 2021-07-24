@@ -1,0 +1,37 @@
+#!/bin/bash -x
+fullTime=2
+partTime=1
+maxHrsInMonth=4
+empRatePerHr=20
+workingDays=20
+empWorkingDays=0
+totalEmpHrs=0
+declare -A dailyWage
+function working_Hrs_Days()
+{
+    local $randomCheck=$1
+    case $randomcheck in
+          $fullTime)    empHrs=8
+                          ;;
+          $partTime)    empHrs=4
+                          ;;
+            *)          empHrs=0
+                          ;;
+    esac
+    echo $empHrs
+}
+function getEmpWage()
+{
+    local $empHrs=$1
+    echo $(($empHrs*$empRatePerHr))
+}
+   while [[ $totalEmpHrs -lt $maxHrsInMonth && $empWorkingDays -lt $WorkingDays ]]
+   do
+        ((empWorkingDays++))
+        randomCheck=$((RANDOM%3))
+        empHrs=$( working_hrs_Days $randomCheck )
+        totalEmpHrs=$(($totalEmpHrs+$empHrs))
+        dailyWage["$empWorkingHrs"]="$(getEmpWage $empHrs)"  
+   done
+salary=$(($totalEmpHrs*empRatePerHr))
+echo ${dailWage[@]}
