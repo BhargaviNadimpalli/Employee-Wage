@@ -6,7 +6,7 @@ empRatePerHr=20
 workingDays=20
 empWorkingDays=0
 totalEmpHrs=0
-function working_Hrs_Days
+function working_Hrs_Days()
 {
     case $randomcheck in
           $fullTime)    empHrs=8
@@ -21,7 +21,7 @@ function working_Hrs_Days
    while [[ $totalEmpHrs -lt $maxHrsInMonth && $empWorkingDays -lt $WorkingDays ]]
    do
         ((empWorkingDays++))
-        empHrs=$( workin_hrs_Days $((RANDOM%3)) )   
+        empHrs=$( working_hrs_Days $((RANDOM%3)) )   
         totalEmpHrs=$(($totalEmpHrs+$empHrs))
    done
 salary=$(($totalEmpHrs*empRatePerHr))
