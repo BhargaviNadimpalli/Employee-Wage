@@ -6,10 +6,10 @@ empRatePerHr=20
 workingDays=20
 empWorkingDays=0
 totalEmpHrs=0
+randomCheck=$((RANDOM%3))
 while [[ $totalEmpHrs -lt $maxHrsInMonth && $empWorkingDays -lt $empWorkingDays ]]
 do
   ((empWorkingDays++))
-  randomCheck=$((RANDOM%3))
     case $randomcheck in
           $fullTime)    empHrs=8
                           ;;
