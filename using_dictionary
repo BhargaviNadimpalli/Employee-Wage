@@ -33,5 +33,5 @@ function getEmpWage()
         totalEmpHrs=$(($totalEmpHrs+$empHrs))
         dailyWage["$empWorkingHrs"]="$(getEmpWage $empHrs)"  
    done
-salary=$(($totalEmpHrs*empRatePerHr))
+salary=$(($totalEmpHrs*$empRatePerHr))
 echo ${dailWage[@]}
